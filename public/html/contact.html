@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/global.css" rel="stylesheet" type="text/css" />
+    <link href="../css/contact.css" rel="stylesheet" type="text/css" />
+    <title>Contact us</title>
+    <script src="../javascript/NavBar.js" type="module" defer></script>
+    <script
+      src="../javascript/BodyContainer.js"
+      type="module"
+      defer
+    ></script>
+  </head>
+  <body>
+    <my-navbar></my-navbar>
+    <my-body-container>
+      <div class="contact-container">
+        <p id="contact-title">Contact us</p>
+        <form>
+            <div class="contact-blocks">
+                <div class="contact-block">
+                    <p>First Name</p>
+                    <input type="text" class="contact-block-input" placeholder="First Name">
+                </div>
+                <div class="contact-block">
+                    <p>Last Name</p>
+                    <input type ="text" class="contact-block-input" placeholder="Last Name">
+                </div>
+                <div class="contact-block">
+                    <p>E-mail</p>
+                    <input type="email" class="contact-block-input" placeholder="E-mail">
+                </div>
+                <div class="contact-block">
+                    <p>Description</p>
+                    <textarea rows="5" cols="15" class="contact-block-description" placeholder="Description" ></textarea>
+                </div>
+                <input type="submit" class="submit-button"></input>
+            </div>
+        </form>
+        <div class="details">
+            <p id="info">Our information</p>
+            <div class="info-description">
+                <img src="../assets/phone.png" />
+                <p> +40734756813</p>
+            </div>
+            <div class="info-description">
+                <img src="../assets/mail.png"/>
+                <p>marius_beschieru@yahoo.com</p>
+            </div>
+        </div>
+        </div>
+      </div>
+    </my-body-container>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "username": "marius",
+    "password": "marius",
+    "lastScore": 50,
+    "highscore": 100
+  },
+  {
+    "id": 2,
+    "username": "andreea",
+    "password": "cucmic",
+    "lastScore": 30,
+    "highscore": 200
+  },
+  {
+    "id": 3,
+    "username": "testUser",
+    "email": "test@example.com",
+    "password": "password123",
+    "latestScore": 0,
+    "highestScore": 0
+  }
+]

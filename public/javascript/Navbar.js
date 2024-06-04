@@ -1,4 +1,4 @@
-import { setupHamburgerMenu } from "./hamubrger.js";
+import { setupHamburgerMenu } from "./hamburger.js";
 
 class NavBar extends HTMLElement {
   constructor() {

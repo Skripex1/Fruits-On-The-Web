@@ -5,64 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/global.css" rel="stylesheet" type="text/css" />
     <link href="../css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../css/navbar.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
+    <script src="../javascript/scripts.js" type="module" defer></script>
+    <script src="../javascript/hamburger.js" type="module" defer></script>
     <script src="../javascript/NavBar.js" type="module" defer></script>
     <script src="../javascript/BodyContainer.js" type="module" defer></script>
-    <title>Document</title>
+    <title>FrOW - Fruits on the Web</title>
   </head>
   <body>
     <my-navbar></my-navbar>
     <my-body-container>
-      <div class="index-main-container">
-        <p id="index-title">Fruits on the web</p>
-        <p id="index-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          molestie sit amet purus non malesuada. Vestibulum at enim libero. Cras
-          eu odio euismod, egestas mauris a, malesuada sapien. Proin vel augue
-          aliquam, dapibus sem sit amet, egestas nunc. Sed ante erat, faucibus
-          ac vulputate eget, luctus at turpis. Curabitur nunc orci, luctus et
-          lobortis et, placerat eget sapien. Quisque lobortis lectus sit amet
-          lectus malesuada, ut porttitor tellus convallis. Praesent non
-          consequat turpis. Morbi vitae fermentum velit, in placerat orci.
-        </p>
-        <p id="index-text">
-          Nullam et massa nibh. Etiam consectetur massa eget quam pretium, ut
-          porttitor dui tempor. Quisque commodo magna non urna vestibulum, porta
-          dignissim tellus viverra. Phasellus hendrerit leo condimentum ligula
-          faucibus, at bibendum tortor tincidunt. Cras quam dui, bibendum in
-          suscipit pharetra, venenatis eu orci. Nullam tellus sem, accumsan at
-          metus non, pulvinar eleifend nunc. Vestibulum elementum lorem et
-          molestie cursus. Nam id sem non quam accumsan finibus quis vitae
-          ipsum. In vestibulum at turpis quis euismod. Duis quis leo auctor,
-          sodales dolor sed, ornare massa. Pellentesque nisl risus, viverra et
-          mi ut, iaculis venenatis lectus. Fusce lacinia eu elit ac interdum.
-          Cras ac tellus sem. Suspendisse ut tortor vel tellus condimentum
-          aliquet vel eu ante. Suspendisse vel ligula sed magna tincidunt
-          eleifend. Vestibulum pellentesque nisl at tempus faucibus.
-        </p>
-        <p id="index-text">
-          Nulla tincidunt orci lacus, ultrices commodo quam congue fermentum.
-          Pellentesque molestie massa in aliquam sodales. Nunc ultrices, ante
-          nec iaculis bibendum, lacus diam cursus urna, sed pharetra eros metus
-          nec tortor. Suspendisse hendrerit malesuada tincidunt. Suspendisse non
-          fermentum orci. Fusce cursus ipsum et sem dapibus viverra. Sed
-          efficitur lacus a nunc ornare, venenatis pharetra ante maximus.
-        </p>
-        <p id="index-text">
-          Nulla tincidunt orci lacus, ultrices commodo quam congue fermentum.
-          Pellentesque molestie massa in aliquam sodales. Nunc ultrices, ante
-          nec iaculis bibendum, lacus diam cursus urna, sed pharetra eros metus
-          nec tortor. Suspendisse hendrerit malesuada tincidunt. Suspendisse non
-          fermentum orci. Fusce cursus ipsum et sem dapibus viverra. Sed
-          efficitur lacus a nunc ornare, venenatis pharetra ante maximus.
-        </p>
-        <p id="index-text">
-          Donec porta dui quis suscipit gravida. Nunc pellentesque lacinia
-          mauris efficitur ullamcorper. Sed a felis aliquam, convallis purus sit
-          amet, commodo sem. Vestibulum efficitur nulla sed libero ultrices
-          ornare. Integer pharetra lorem nec elementum consectetur. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Nullam fermentum ex ac erat euismod consectetur.
-        </p>
+      <div id="app">
+        <div class="start-screen">
+          <h1>Fruits On The Web</h1>
+          <button id="start-button">Start</button>
+          <div class="difficulty">
+            <label>
+              <input type="radio" name="difficulty" value="easy" checked>
+              <span class="easy">Ușor</span>
+            </label>
+            <label>
+              <input type="radio" name="difficulty" value="medium">
+              <span class="medium">Mediu</span>
+            </label>
+            <label>
+              <input type="radio" name="difficulty" value="hard">
+              <span class="hard">Dificil</span>
+            </label>
+          </div>
+        </div>
+        <div class="game-screen hidden">
+          <div class="hint"></div>
+          <div class="images"></div>
+          <div class="score">Puncte: <span id="score">0</span></div>
+          <div class="timer">Timp rămas: <span id="timer">60</span> secunde</div>
+        </div>
+        <div class="end-screen hidden">
+          <h1>Felicitări!</h1>
+          <p>Scorul tău final este: <span id="final-score"></span></p>
+          <button id="restart-button">Joacă din nou</button>
+          <button id="main-menu-button">Meniu Principal</button>
+        </div>
       </div>
     </my-body-container>
   </body>

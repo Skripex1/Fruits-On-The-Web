@@ -12,8 +12,18 @@ const getUserById = async (id) => {
     return users.find((user) => user.id === Number(id));
   } catch (error) {
     console.log(`Can not find user with id : ${id}`, error);
-    return 0;
+    return null;
   }
 };
 
-export { getAllUsers, getUserById };
+const getUserByUsername = async (username) => {
+  try {
+    const users = await getAllUsers();
+    return users.find((user) => (user.username = username));
+  } catch (error) {
+    console.log(`Can not find user with username : ${username}`, error);
+    return null;
+  }
+};
+
+export { getAllUsers, getUserById, getUserByUsername };

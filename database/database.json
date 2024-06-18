@@ -20,5 +20,13 @@
     "password": "password123",
     "latestScore": 0,
     "highestScore": 0
+  },
+  {
+    "id": 4,
+    "username": "marius123",
+    "email": "123123@gmail.com",
+    "password": "bunica",
+    "latestScore": 0,
+    "highestScore": 0
   }
 ]

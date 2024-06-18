@@ -1,12 +1,18 @@
 const sendResponse = (
   res,
   {
-    data = `${res} was sent sucessfully !`,
+    data = `${res} was sent successfully!`,
     statusCode = 200,
     contentType = "application/json",
+    headers = {},
   }
 ) => {
-  res.writeHead(statusCode, { "Content-Type": contentType });
+  const responseHeaders = {
+    "Content-Type": contentType,
+    ...headers,
+  };
+
+  res.writeHead(statusCode, responseHeaders);
   res.write(JSON.stringify(data));
   res.end();
 };

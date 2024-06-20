@@ -95,3 +95,21 @@ export const login = async (req, res) => {
     });
   }
 };
+
+export const getBest5Scores = async (req, res) => {
+  try {
+    const users = await getAllUsers();
+    const sortedUsers = users.sort((a, b) => b.highestScore - a.highestScore);
+    const top5Users = sortedUsers.slice(0, 5);
+    return sendResponse(res, {
+      data: top5Users,
+      statusCode: 200,
+    });
+  } catch (error) {
+    console.log("Error retrieving best 5 scores", error);
+    return sendResponse(res, {
+      data: "Internal Server Error",
+      statusCode: 500,
+    });
+  }
+};

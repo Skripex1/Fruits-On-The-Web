@@ -1,4 +1,8 @@
-import { createUser, login } from "../controllers/userController.js";
+import {
+  createUser,
+  getBest5Scores,
+  login,
+} from "../controllers/userController.js";
 import { getAllUsers } from "../services/userService.js";
 import sendResponse from "../utils/sendResponse.js";
 
@@ -30,6 +34,11 @@ export const routes = {
       }
       res.writeHead(302, { Location: "/login" });
       res.end();
+    },
+  },
+  "/leaderboard": {
+    GET: async (req, res) => {
+      await getBest5Scores(req, res);
     },
   },
 };

@@ -4,14 +4,14 @@
     "username": "marius",
     "password": "marius",
     "lastScore": 50,
-    "highscore": 100
+    "highestScore": 100
   },
   {
     "id": 2,
     "username": "andreea",
     "password": "cucmic",
     "lastScore": 30,
-    "highscore": 200
+    "highestScore": 200
   },
   {
     "id": 3,

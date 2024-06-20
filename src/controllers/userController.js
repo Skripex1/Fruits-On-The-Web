@@ -84,7 +84,6 @@ export const login = async (req, res) => {
 
       const sessionId = createSession(username);
       setSessionCookie(res, sessionId);
-
       res.writeHead(302, { Location: "/" });
       res.end();
     });

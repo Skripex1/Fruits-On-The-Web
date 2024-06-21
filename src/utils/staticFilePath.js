@@ -27,7 +27,6 @@ export const getStaticFilePath = (url) => {
         contentType = "text/javascript";
         filePath = path.join(basePublicPath, "javascript", path.basename(url));
         break;
-      case ".jpg":
       case ".jpeg":
         contentType = "image/jpeg";
         filePath = path.join(basePublicPath, "assets", path.basename(url));

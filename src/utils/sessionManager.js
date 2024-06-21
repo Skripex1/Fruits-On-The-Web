@@ -25,13 +25,17 @@ export const getSessionIdFromCookie = (req) => {
 export const createSession = (username) => {
   const sessionId = generateSessionId();
   sessions[sessionId] = { username };
+  console.log(`Created session: ${sessionId} -> ${username}`); // Debug
   return sessionId;
 };
 
 export const getSession = (sessionId) => {
-  return sessions[sessionId];
+  const session = sessions[sessionId];
+  console.log(`Retrieved session: ${sessionId} -> ${session}`); // Debug
+  return session;
 };
 
 export const destroySession = (sessionId) => {
   delete sessions[sessionId];
+  console.log(`Destroyed session: ${sessionId}`); // Debug
 };

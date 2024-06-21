@@ -1,12 +1,24 @@
 import { getSessionIdFromCookie, getSession } from "../utils/sessionManager.js";
 
-export const isAuthenticated = (req) => {
+export const authenticate = (req, res, next) => {
   const sessionId = getSessionIdFromCookie(req);
   const session = getSession(sessionId);
   console.log(
-    `isAuthenticated check: sessionId=${sessionId}, session=${JSON.stringify(
-      session
-    )}`
+    `isAuthenticated check: sessionId=${sessionId}, session=${session}`
   );
-  return session ? true : false;
+  if (sessionId && session) {
+    req.session = session;
+    next();
+  } else {
+    const isLoginRequest =
+      req.url === "/api/login" ||
+      (req.url === "/api/users" && req.method.toUpperCase() === "POST");
+
+    if (isLoginRequest) {
+      next();
+    } else {
+      res.writeHead(302, { Location: "/login" });
+      res.end();
+    }
+  }
 };

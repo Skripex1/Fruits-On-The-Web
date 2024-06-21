@@ -3,6 +3,7 @@ import { readFromFile } from "../utils/fileManager.js";
 const getAllUsers = async () => {
   const data = await readFromFile();
   const users = Object.values(data);
+  console.log(users);
   return users;
 };
 
@@ -19,7 +20,7 @@ const getUserById = async (id) => {
 const getUserByUsername = async (username) => {
   try {
     const users = await getAllUsers();
-    return users.find((user) => (user.username = username));
+    return users.find((user) => user.username === username);
   } catch (error) {
     console.log(`Can not find user with username : ${username}`, error);
     return null;

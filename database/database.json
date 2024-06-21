@@ -4,12 +4,14 @@
     "username": "marius",
     "password": "marius",
     "lastScore": 50,
+    "email": "marius@example.com",
     "highestScore": 100
   },
   {
     "id": 2,
     "username": "andreea",
     "password": "cucmic",
+    "email": "andreea@example.com",
     "lastScore": 30,
     "highestScore": 200
   },
@@ -25,6 +27,30 @@
     "id": 4,
     "username": "marius123",
     "email": "123123@gmail.com",
+    "password": "bunica",
+    "latestScore": 0,
+    "highestScore": 0
+  },
+  {
+    "id": 5,
+    "username": "marius13",
+    "email": "marius@gmail.com",
+    "password": "bunica",
+    "latestScore": 0,
+    "highestScore": 0
+  },
+  {
+    "id": 6,
+    "username": "marius1234",
+    "email": "bunica@gmail.com",
+    "password": "bunica",
+    "latestScore": 0,
+    "highestScore": 0
+  },
+  {
+    "id": 7,
+    "username": "marius15",
+    "email": "bunel@gmail.com",
     "password": "bunica",
     "latestScore": 0,
     "highestScore": 0

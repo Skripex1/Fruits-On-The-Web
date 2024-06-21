@@ -1,44 +1,46 @@
 import {
   createUser,
   getBest5Scores,
+  getCurrentUser,
   login,
+  logout,
 } from "../controllers/userController.js";
 import { getAllUsers } from "../services/userService.js";
 import sendResponse from "../utils/sendResponse.js";
 
 export const routes = {
-  "/": {
+  "/api/": {
     GET: (req, res) => {
       sendResponse(res, { data: "REST API is running", statusCode: 200 });
     },
   },
-  "/users": {
+  "/api/users": {
     GET: async (req, res) => {
       const users = await getAllUsers();
       sendResponse(res, { data: users, statusCode: 200 });
     },
-    POST: (req, res) => {
-      createUser(req, res);
-    },
-  },
-  "/login": {
     POST: async (req, res) => {
-      login(req, res);
+      await createUser(req, res);
     },
   },
-  "/logout": {
-    GET: (req, res) => {
-      const sessionId = getSessionIdFromCookie(req);
-      if (sessionId) {
-        destroySession(sessionId);
-      }
-      res.writeHead(302, { Location: "/login" });
-      res.end();
+  "/api/login": {
+    POST: async (req, res) => {
+      await login(req, res);
     },
   },
-  "/leaderboard": {
+  "/api/logout": {
+    POST: (req, res) => {
+      logout(req, res);
+    },
+  },
+  "/api/leaderboard": {
     GET: async (req, res) => {
       await getBest5Scores(req, res);
+    },
+  },
+  "/api/current-user": {
+    GET: (req, res) => {
+      getCurrentUser(req, res);
     },
   },
 };

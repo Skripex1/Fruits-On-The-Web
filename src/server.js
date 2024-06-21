@@ -5,49 +5,58 @@ import logger from "./middlewares/logger.js";
 import { getStaticFilePath } from "./utils/staticFilePath.js";
 import { serveFile } from "./utils/fileManager.js";
 import { staticNotFound, routeNotFound } from "./utils/404.js";
-import { isAuthenticated } from "./middlewares/auth.js";
+import { authenticate } from "./middlewares/auth.js";
+import {
+  getSessionIdFromCookie,
+  getSession,
+  destroySession,
+} from "./utils/sessionManager.js";
 
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer(async (req, res) => {
-  console.log(`Request URL: ${req.url}`);
+  const parsedUrl = url.parse(req.url, true);
+  const apiPath = parsedUrl.pathname;
+  const method = req.method.toUpperCase();
 
-  const isApiRequest = req.url.startsWith("/api");
-  const isLoginRequest =
-    req.url === "/login" ||
-    req.url === "/api/login" ||
-    req.url.startsWith("/css/") ||
-    req.url.startsWith("/javascript/");
-
-  const authenticated = isAuthenticated(req);
-  console.log(`Authenticated: ${authenticated}`);
-
-  if (!authenticated && !isLoginRequest) {
-    res.writeHead(302, { Location: "/login" });
-    console.log("Redirecting to login");
-    return res.end();
-  }
-
-  if (isApiRequest) {
-    const apiPath = req.url.replace("/api", "");
-    const method = req.method.toUpperCase();
+  if (apiPath.startsWith("/api")) {
     const handler = routes[apiPath] && routes[apiPath][method];
 
     if (handler) {
-      console.log("Handling API request");
-      handler(req, res);
+      authenticate(req, res, () => handler(req, res));
     } else {
       routeNotFound(res);
     }
   } else {
-    const { filePath, contentType } = getStaticFilePath(req.url);
-    console.log(`Serving static file: ${filePath}`);
+    const sessionId = getSessionIdFromCookie(req);
+    const session = getSession(sessionId);
 
-    try {
-      await serveFile(filePath, contentType, res);
-    } catch (error) {
-      console.error(`File not found: ${filePath}`);
-      staticNotFound(res);
+    if (sessionId && session) {
+      const { filePath, contentType } = getStaticFilePath(apiPath);
+      try {
+        await serveFile(filePath, contentType, res);
+      } catch (error) {
+        console.error(`File not found: ${filePath}`);
+        staticNotFound(res);
+      }
+    } else {
+      if (
+        apiPath === "/login" ||
+        apiPath === "/css/login.css" ||
+        apiPath === "/javascript/userLogin.js" ||
+        apiPath === "/javascript/modalFunctionality.js"
+      ) {
+        const { filePath, contentType } = getStaticFilePath(apiPath);
+        try {
+          await serveFile(filePath, contentType, res);
+        } catch (error) {
+          console.error(`File not found: ${filePath}`);
+          staticNotFound(res);
+        }
+      } else {
+        res.writeHead(302, { Location: "/login" });
+        res.end();
+      }
     }
   }
 });

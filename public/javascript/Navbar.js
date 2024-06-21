@@ -1,4 +1,5 @@
 import { setupHamburgerMenu } from "./hamburger.js";
+import { setupUserInfo } from "./userInfo.js";
 
 class NavBar extends HTMLElement {
   constructor() {
@@ -22,8 +23,9 @@ class NavBar extends HTMLElement {
         this.shadowRoot.appendChild(linkElem);
 
         setupHamburgerMenu(this.shadowRoot);
+        setupUserInfo(this.shadowRoot);
       })
-      .catch((error) => console.error("error loading html ", error));
+      .catch((error) => console.error("Error loading HTML:", error));
   }
 }
 customElements.define("my-navbar", NavBar);

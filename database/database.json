@@ -54,5 +54,13 @@
     "password": "bunica",
     "latestScore": 0,
     "highestScore": 0
+  },
+  {
+    "id": 8,
+    "username": "robert123",
+    "email": "butnariu.robert@yahoo.com",
+    "password": "robert",
+    "latestScore": 0,
+    "highestScore": 0
   }
 ]

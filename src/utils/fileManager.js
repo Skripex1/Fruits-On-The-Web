@@ -50,3 +50,26 @@ export const serveFile = async (filePath, contentType, response) => {
     staticNotFound(response);
   }
 };
+
+export const updateUserScore = async (username, newScore) => {
+  try {
+    const data = await readFromFile();
+    const user = data.find((user) => user.username === username);
+
+    if (user) {
+      user.lastScore = newScore;
+      if (newScore > user.highestScore) {
+        user.highestScore = newScore;
+      }
+      await writeToFile(data);
+      console.log(`Updated scores for user: ${username}`);
+      return true;
+    } else {
+      console.log(`User with username: ${username} not found.`);
+      return false;
+    }
+  } catch (error) {
+    console.error("Error updating user score", error);
+    return false;
+  }
+};

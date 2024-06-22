@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
   } else {
     const sessionId = getSessionIdFromCookie(req);
     const session = getSession(sessionId);
-
+    console.log(`Session username : ${JSON.stringify(session)}`);
     if (sessionId && session) {
       const { filePath, contentType } = getStaticFilePath(apiPath);
       try {

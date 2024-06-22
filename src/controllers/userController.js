@@ -1,6 +1,10 @@
 import { getAllUsers, getUserByUsername } from "../services/userService.js";
 import sendResponse from "../utils/sendResponse.js";
-import { appendToFile, writeToFile } from "../utils/fileManager.js";
+import {
+  appendToFile,
+  writeToFile,
+  updateUserScore,
+} from "../utils/fileManager.js";
 import {
   createSession,
   setSessionCookie,
@@ -123,6 +127,48 @@ export const getCurrentUser = (req, res) => {
     sendResponse(res, {
       data: "No active session found.",
       statusCode: 400,
+    });
+  }
+};
+
+export const updateScore = async (req, res) => {
+  const sessionId = getSessionIdFromCookie(req);
+  const session = getSession(sessionId);
+  if (session) {
+    try {
+      let body = "";
+      req.on("data", (chunk) => {
+        body += chunk.toString();
+      });
+      req.on("end", async () => {
+        const { newScore } = JSON.parse(body);
+
+        const dataJson = JSON.stringify(session);
+        const data = JSON.parse(dataJson);
+
+        const success = await updateUserScore(data.username, newScore);
+        if (success) {
+          sendResponse(res, {
+            data: `Updated score for ${session.username}`,
+            statusCode: 200,
+          });
+        } else {
+          sendResponse(res, {
+            data: `Failed to update score for ${session.username}`,
+            statusCode: 500,
+          });
+        }
+      });
+    } catch (error) {
+      sendResponse(res, {
+        data: `Failed to update score for ${session.username}`,
+        statusCode: 500,
+      });
+    }
+  } else {
+    sendResponse(res, {
+      data: "Session not found",
+      statusCode: 401,
     });
   }
 };

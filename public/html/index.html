@@ -4,50 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/global.css" rel="stylesheet" type="text/css" />
-    <link href="../css/index.css" rel="stylesheet" type="text/css" />
     <link href="../css/navbar.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
-    <script src="../javascript/scripts.js" type="module" defer></script>
-    <script src="../javascript/hamburger.js" type="module" defer></script>
-    <script src="../javascript/NavBar.js" type="module" defer></script>
-    <script src="../javascript/BodyContainer.js" type="module" defer></script>
-    <title>FrOW - Fruits on the Web</title>
+    <title>FrOW</title>
   </head>
   <body>
     <my-navbar></my-navbar>
     <my-body-container>
-      <div id="app">
-        <div class="start-screen">
-          <h1>Fruits On The Web</h1>
-          <button id="start-button">Start</button>
-          <div class="difficulty">
-            <label>
-              <input type="radio" name="difficulty" value="easy" checked>
-              <span class="easy">Ușor</span>
-            </label>
-            <label>
-              <input type="radio" name="difficulty" value="medium">
-              <span class="medium">Mediu</span>
-            </label>
-            <label>
-              <input type="radio" name="difficulty" value="hard">
-              <span class="hard">Dificil</span>
-            </label>
-          </div>
-        </div>
-        <div class="game-screen hidden">
-          <div class="hint"></div>
-          <div class="images"></div>
-          <div class="score">Puncte: <span id="score">0</span></div>
-          <div class="timer">Timp rămas: <span id="timer">60</span> secunde</div>
-        </div>
-        <div class="end-screen hidden">
-          <h1>Felicitări!</h1>
-          <p>Scorul tău final este: <span id="final-score"></span></p>
-          <button id="restart-button">Joacă din nou</button>
-          <button id="main-menu-button">Meniu Principal</button>
+      <div class="main-container">
+        <div class="main-content">
+          <h1 class="main-title">Welcome to FrOW</h1>
+          <p class="main-description">
+            FrOW ( Fruits on the Web ) is a fun and interactive game that helps you keep your mind sharp and focused. The game is simple, but it will challenge your memory and attention. You just have to match the cards with the same fruit, but be careful, after each round the cards will shuffle again and you will have less time to pass to the next round. Click the button below to start playing. Good luck!
+          </p>
+          <a class="main-button" href="./play.html">Play</a>
         </div>
       </div>
     </my-body-container>
+    <script src="../javascript/NavBar.js" type="module" defer></script>
+    <script src="../javascript/BodyContainer.js" type="module" defer></script>
   </body>
 </html>

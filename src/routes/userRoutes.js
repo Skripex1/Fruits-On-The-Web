@@ -4,6 +4,7 @@ import {
   getCurrentUser,
   login,
   logout,
+  updateScore,
 } from "../controllers/userController.js";
 import { getAllUsers } from "../services/userService.js";
 import sendResponse from "../utils/sendResponse.js";
@@ -41,6 +42,11 @@ export const routes = {
   "/api/current-user": {
     GET: (req, res) => {
       getCurrentUser(req, res);
+    },
+  },
+  "/api/update-score": {
+    POST: async (req, res) => {
+      await updateScore(req, res);
     },
   },
 };

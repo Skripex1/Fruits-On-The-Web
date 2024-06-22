@@ -3,17 +3,17 @@
     "id": 1,
     "username": "marius",
     "password": "marius",
-    "lastScore": 50,
+    "lastScore": 1,
     "email": "marius@example.com",
-    "highestScore": 100
+    "highestScore": 1
   },
   {
     "id": 2,
     "username": "andreea",
     "password": "cucmic",
     "email": "andreea@example.com",
-    "lastScore": 30,
-    "highestScore": 200
+    "lastScore": 0,
+    "highestScore": 0
   },
   {
     "id": 3,

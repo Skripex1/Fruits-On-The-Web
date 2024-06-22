@@ -1,43 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-p{
+p {
   font-size: 20px;
 }
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #FF6F61;
-}
-::selection{
+
+::selection {
   color: #fff;
-  background: #FF6F61;
+  background: #ff6f61;
 }
-.wrapper{
+.wrapper {
+  display: flex;
   padding: 25px;
   background: #f8f8f8;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  max-height: 375px;
 }
-.cards, .card, .view, .details, p{
+.cards,
+.card,
+.view,
+.details,
+p {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cards{
+.cards {
   height: 350px;
   width: 350px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.cards .card{
+.cards .card {
   cursor: pointer;
   position: relative;
   perspective: 1000px;
@@ -45,27 +40,28 @@ body{
   height: calc(100% / 4 - 10px);
   width: calc(100% / 4 - 10px);
 }
-.card.shake{
+.card.shake {
   animation: shake 0.35s ease-in-out;
 }
 @keyframes shake {
-  0%, 100%{
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%{
+  20% {
     transform: translateX(-13px);
   }
-  40%{
+  40% {
     transform: translateX(13px);
   }
-  60%{
+  60% {
     transform: translateX(-8px);
   }
-  80%{
+  80% {
     transform: translateX(8px);
   }
 }
-.cards .card .view{
+.cards .card .view {
   width: 100%;
   height: 100%;
   user-select: none;
@@ -75,26 +71,26 @@ body{
   border-radius: 7px;
   backface-visibility: hidden;
   transition: transform 0.25s linear;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-.card .front-view img{
+.card .front-view img {
   max-width: 17px;
   scale: 3;
 }
-.card .back-view{
+.card .back-view {
   transform: rotateY(-180deg);
 }
-.card .back-view img{
+.card .back-view img {
   max-width: 40px;
 }
-.card.flip .front-view{
+.card.flip .front-view {
   transform: rotateY(180deg);
 }
-.card.flip .back-view{
+.card.flip .back-view {
   transform: rotateY(0);
 }
 
-.details{
+.details {
   width: 100%;
   margin-top: 15px;
   padding: 0 20px;
@@ -102,72 +98,72 @@ body{
   background: #fff;
   height: calc(100% / 4 - 30px);
   justify-content: space-between;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-.details p{
+.details p {
   font-size: 18px;
   height: 17px;
   padding-right: 18px;
   border-right: 1px solid #ccc;
 }
-.details p span{
+.details p span {
   margin-left: 8px;
 }
-.details p b{
+.details p b {
   font-weight: 500;
 }
-.details button{
+.details button {
   cursor: pointer;
   font-size: 14px;
-  color: #FF6F61;
+  color: #ff6f61;
   border-radius: 4px;
   padding: 4px 11px;
   background: #fff;
-  border: 2px solid #FF6F61;
+  border: 2px solid #ff6f61;
   transition: 0.3s ease;
 }
-.details button:hover{
+.details button:hover {
   color: #fff;
-  background: #FF6F61;
+  background: #ff6f61;
 }
 
 @media screen and (max-width: 700px) {
-  .cards{
+  .cards {
     height: 350px;
     width: 350px;
   }
-  .card .front-view img{
+  .card .front-view img {
     max-width: 16px;
   }
-  .card .back-view img{
+  .card .back-view img {
     max-width: 40px;
   }
 }
 
 @media screen and (max-width: 530px) {
-  .cards{
+  .cards {
     height: 300px;
     width: 300px;
   }
-  .card .back-view img{
+  .card .back-view img {
     max-width: 35px;
   }
-  .details{
+  .details {
     margin-top: 10px;
     padding: 0 15px;
     height: calc(100% / 4 - 20px);
   }
-  .details p{
+  .details p {
     height: 15px;
     font-size: 17px;
     padding-right: 13px;
   }
-  .details button{
+  .details button {
     font-size: 13px;
     padding: 5px 10px;
     border: none;
     color: #fff;
-    background: #FF6F61;
+    background: #ff6f61;
   }
 }
 
@@ -175,9 +171,7 @@ body{
   display: none;
   font-size: 24px;
   font-weight: 700;
-  color: #FF6F61;
+  color: #ff6f61;
   margin-top: 20px;
   text-align: center;
 }
-
-

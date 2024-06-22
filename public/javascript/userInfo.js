@@ -1,6 +1,11 @@
 export async function setupUserInfo(container) {
   const userContainer = container.querySelector(".user-container p");
-  const logoutButton = container.querySelector(".user-container button");
+  const logoutButtonUserContainer = container.querySelector(
+    ".user-container button"
+  );
+  const logoutButtonHamburger = container.querySelector(
+    ".div-routes-phone .logout"
+  );
 
   try {
     const response = await fetch("/api/current-user", {
@@ -12,7 +17,7 @@ export async function setupUserInfo(container) {
 
     if (response.ok) {
       const data = await response.json();
-      userContainer.textContent = data.username;
+      userContainer.textContent = "Hello " + data.username;
     } else {
       const errorText = await response.text();
       console.error("Error fetching user information:", errorText);
@@ -23,7 +28,7 @@ export async function setupUserInfo(container) {
     userContainer.textContent = "Guest";
   }
 
-  logoutButton.addEventListener("click", async () => {
+  async function handleLogout() {
     try {
       const response = await fetch("/api/logout", {
         method: "POST",
@@ -41,5 +46,13 @@ export async function setupUserInfo(container) {
       console.error("Error during logout:", error);
       alert("An error occurred during logout. Please try again.");
     }
-  });
+  }
+
+  if (logoutButtonUserContainer) {
+    logoutButtonUserContainer.addEventListener("click", handleLogout);
+  }
+
+  if (logoutButtonHamburger) {
+    logoutButtonHamburger.addEventListener("click", handleLogout);
+  }
 }

@@ -26,7 +26,7 @@ body {
 .main-body-container {
   display: flex;
   min-height: calc(100vh - 82px);
-  background-color: #f6f6f6;
+  background-color: #f0f4ff;
   width: 100vw;
   justify-content: center;
 }

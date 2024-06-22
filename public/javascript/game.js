@@ -4,7 +4,7 @@ const cards = document.querySelectorAll(".card"),
   finalScoreTag = document.querySelector(".final-score"),
   refreshBtn = document.querySelector(".details button");
 
-let maxTime = 5;
+let maxTime = 30;
 let timeLeft = maxTime;
 let flips = 0;
 let matchedCard = 0;

@@ -11,8 +11,11 @@
 }
 
 #contact-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
+  margin-bottom: 15px;
+  color: black;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
 }
 
 .contact-blocks {
@@ -20,7 +23,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .contact-block {
@@ -28,13 +31,14 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .contact-block p {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  align-self: left;
+  color: black;
+  transition: color 0.3s;
 }
 
 .contact-block-input {

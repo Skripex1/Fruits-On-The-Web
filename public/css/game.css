@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #41f4b0, #4070f4);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 p {
   font-size: 20px;
 }
@@ -12,7 +23,8 @@ p {
 .body-wrapper {
   display: flex;
   align-content: center;
-  margin-top: 100px;
+  justify-content: center;
+  padding: 20px;
 }
 
 .wrapper {

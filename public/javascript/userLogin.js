@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Form submit event");
       event.preventDefault();
 
-      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      console.log(`Username: ${username}, Password: ${password}`);
+      console.log(`Email: ${email}, Password: ${password}`);
 
       try {
         const response = await fetch("http://localhost:3000/api/login", {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ email, password }),
         });
         console.log("Response received", response);
         if (response.ok) {

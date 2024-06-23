@@ -1,4 +1,8 @@
-import { getAllUsers, getUserByUsername } from "../services/userService.js";
+import {
+  getAllUsers,
+  getUserByEmail,
+  getUserByUsername,
+} from "../services/userService.js";
 import sendResponse from "../utils/sendResponse.js";
 import {
   appendToFile,
@@ -73,10 +77,11 @@ export const login = async (req, res) => {
     body += chunk.toString();
   });
   req.on("end", async () => {
-    const { username, password } = JSON.parse(body);
-    const user = await getUserByUsername(username);
+    const { email, password } = JSON.parse(body);
+    const user = await getUserByEmail(email);
     console.log(user);
     if (user && user.password === password) {
+      const username = user.username;
       const sessionId = createSession(username);
       setSessionCookie(res, sessionId);
       sendResponse(res, { data: "Login successful", statusCode: 200 });

@@ -27,4 +27,13 @@ const getUserByUsername = async (username) => {
   }
 };
 
-export { getAllUsers, getUserById, getUserByUsername };
+const getUserByEmail = async (email) => {
+  try {
+    const users = await getAllUsers();
+    return users.find((user) => user.email === email);
+  } catch (error) {
+    console.log(`Can not find user with the email ${email}`);
+  }
+};
+
+export { getAllUsers, getUserById, getUserByUsername, getUserByEmail };

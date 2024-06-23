@@ -122,16 +122,14 @@ p {
 .details button {
   cursor: pointer;
   font-size: 14px;
-  color: #ff6f61;
   border-radius: 4px;
   padding: 4px 11px;
-  background: #fff;
-  border: 2px solid #ff6f61;
+  background-color: #41f4b0;
+  border: none;
   transition: 0.3s ease;
 }
 .details button:hover {
-  color: #fff;
-  background: #ff6f61;
+  background: #34e29d;
 }
 
 @media screen and (max-width: 700px) {
@@ -178,7 +176,7 @@ p {
   display: none;
   font-size: 24px;
   font-weight: 700;
-  color: #ff6f61;
+  color: #34e29d;
   margin-top: 20px;
   text-align: center;
   margin-left: 5px;

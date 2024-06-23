@@ -1,45 +1,62 @@
 .leaderboard-container {
-  max-width: 1000%; /* Increase the width to 80% of the viewport */
+  width: 100%; 
   margin: 0 auto;
-  padding: 50px;
+  padding: 30px;
   text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #leaderboard-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: black;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
 }
+
 
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 auto; /* Center the table */
+  margin: 0 auto;
 }
+
 
 .leaderboard-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  transition: background-color 0.3s;
 }
 
 .leaderboard-row.header {
   font-weight: bold;
   background-color: #f0f0f0;
+  color: black;
 }
+
 
 .leaderboard-cell {
   flex: 1;
-  padding: 20px; /* Increase padding for larger cells */
+  padding: 10px;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  font-size: 16px;
+  color: black;
+  transition: color 0.3s;
 }
 
 .leaderboard-cell.header {
   text-transform: uppercase;
+  font-size: 18px;
+  color: #41f4b0;
 }
 
 .leaderboard-cell:first-child {
-  width: 10%; /* Adjust width */
+  width: 10%;
   text-align: center;
 }
 
@@ -49,22 +66,21 @@
 }
 
 .leaderboard-cell:last-child {
-  width: 20%; /* Adjust width */
+  width: 20%;
   text-align: right;
 }
 
-.leaderboard-row:hover {
-  background-color: #f9f9f9;
-}
-
 .gold {
-  background-color: gold;
+  border-left: 5px solid gold;
+  background-color: #fbf0ca;
 }
 
 .silver {
-  background-color: silver;
+  border-left: 5px solid silver;
+  background-color: #ececec;
 }
 
 .bronze {
-  background-color: #cd7f32;
+  border-left: 5px solid #cd7f32;
+  background-color: #ffdfbb;
 }

@@ -3,9 +3,9 @@
     "id": 1,
     "username": "marius",
     "password": "marius",
-    "lastScore": 1,
+    "lastScore": 5,
     "email": "marius@example.com",
-    "highestScore": 1
+    "highestScore": 5
   },
   {
     "id": 2,

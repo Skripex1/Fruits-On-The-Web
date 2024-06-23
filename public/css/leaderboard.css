@@ -1,9 +1,9 @@
 .leaderboard-container {
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
   padding: 30px;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -13,16 +13,14 @@
   font-weight: 600;
   margin-bottom: 15px;
   color: black;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
 }
-
 
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
 }
-
 
 .leaderboard-row {
   display: flex;
@@ -39,11 +37,10 @@
   color: black;
 }
 
-
 .leaderboard-cell {
   flex: 1;
   padding: 10px;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
   font-size: 16px;
   color: black;
   transition: color 0.3s;
@@ -83,4 +80,15 @@
 .bronze {
   border-left: 5px solid #cd7f32;
   background-color: #ffdfbb;
+}
+
+#fetch-rss {
+  margin-top: 100px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 4px 11px;
+  background-color: #41f4b0;
+  border: none;
+  transition: 0.3s ease;
 }

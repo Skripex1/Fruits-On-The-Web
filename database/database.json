@@ -61,6 +61,11 @@
     "email": "butnariu.robert@yahoo.com",
     "password": "robert",
     "latestScore": 0,
+<<<<<<< Updated upstream
     "highestScore": 0
+=======
+    "highestScore": 22,
+    "lastScore": 4
+>>>>>>> Stashed changes
   }
 ]

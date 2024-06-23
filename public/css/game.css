@@ -6,7 +6,7 @@ p {
 
 ::selection {
   color: #fff;
-  background: #ff6f61;
+  background: #41f4b0;
 }
 
 .body-wrapper {
@@ -169,8 +169,8 @@ p {
     font-size: 13px;
     padding: 5px 10px;
     border: none;
-    color: #fff;
-    background: #ff6f61;
+    color: black;
+    background: #41f4b0;
   }
 }
 

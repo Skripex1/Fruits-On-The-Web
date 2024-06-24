@@ -27,17 +27,27 @@
                     <li><a href="#abstract" class="subchapter">Abstract</a></li>
                     <li><a href="#purpose" class="subchapter">Purpose</a></li>
                     <li><a href="#document-conventions" class="subchapter">Document Conventions</a></li>
-                    <li><a href="#intended-audience" class="subchapter">Intended Audience and Reading Suggestions</a></li>
+                    <li><a href="#intended-audience" class="subchapter">Intended Audience</a></li>
                     <li><a href="#product-scope" class="subchapter">Product Scope</a></li>
                     <li><a href="#overall-description" class="chapter">2.Overall Description</a></li>
                     <li><a href="#product-perspective" class="subchapter">Product Perspective</a></li>
-                    <li><a href="#product-functions" class="subchapter">Product Functions</a></li>
                     <li><a href="#operating-environment" class="subchapter">Operating Environment</a></li>
-                    <li><a href="#system-features" class="chapter">3.System Features</a></li>
-                    <li><a href="#game-page" class="subchapter">Game Page</a></li>
-                    <li><a href="#contact-page" class="subchapter">Contact Page</a></li>
+                    <li><a href="#ui-features" class="chapter">3.User Interface Features</a></li>
+                    <li><a href="#login-page" class="subchapter">Registration and Login Page</a></li>
+                    <li><a href="#home-page" class="subchapter">Home Page</a></li>
+                    <li><a href="#contact-page" class="subchapter">Contact Us Page</a></li>
                     <li><a href="#leaderboard-page" class="subchapter">Leaderboard Page</a></li>
-                    <li><a href="#about-page" class="subchapter">About Page</a></li>
+                    <li><a href="#game-page" class="subchapter">Game Page</a></li>
+                    <li><a href="#responsive" class="subchapter">Responsive Design</a></li>
+                    <li><a href="#server-features" class="chapter">4.Server Features</a></li>
+                    <li><a href="#database" class="subchapter">Database</a></li>
+                    <li><a href="#user-authentication" class="subchapter">User Authentication</a></li>
+                    <li><a href="#game-logic" class="subchapter">Game Logic</a></li>
+                    <li><a href="#data-management" class="subchapter">Data Management</a></li>
+                    <li><a href="#api-rest" class="subchapter">API REST</a></li>
+                    <li><a href="#rss-feed" class="subchapter">RSS Feed</a></li>
+                    <li><a href="#technology-used" class="subchapter">Technology Used</a></li>
+                    <li><a href="#application-diagram" class="chapter">5.Application Diagram</a></li>
                 </ul>
             </nav>
         </section>
@@ -49,13 +59,13 @@
             <!-- Abstract -->
             <section id="abstract">
                 <h3>1.1 Abstract</h3>
-                <p>FrOW (Fruits On The Web) is a project aimed at creating an educational game based on images of fruits and vegetables, intended for elementary school students. The purpose of this game is to provide an interactive and enjoyable way of learning about various types of fruits and vegetables, thereby promoting healthy eating habits.</p>
+                <p>FrOW (Fruits on the Web) is an interactive web game that combines fun with learning, perfect for primary school children. The game challenges players to match fruit cards across increasingly difficult rounds, enhancing their memory and attention. With a colorful and friendly design, FrOW provides an engaging and enjoyable experience for all players. </p>
             </section>
 
             <!-- Purpose -->
             <section id="purpose">
                 <h3>1.2 Purpose</h3>
-                <p>The purpose of this document is to specify the software requirements for developing the user interface for the educational web game 'FrOW (Fruits On The Web)'. This document exclusively covers the requirements for the user interface, including structure, appearance, interaction, and other relevant aspects and does not include requirements for other components or subsystems of the game. Those will be later implemented and documented here.</p>
+                <p>The purpose of this document is to define the software requirements for developing the educational web game FrOW (Fruits On The Web). It covers both the user interface and the backend, detailing how the game should look, feel, and function. This guide ensures that all aspects of the game, from how users interact with it to how it operates behind the scenes, are clearly described and aligned. </p>
             </section>
 
             <!-- Document Conventions -->
@@ -73,11 +83,11 @@
             <!-- Product Scope -->
             <section id="product-scope">
                 <h3>1.5 Product Scope</h3>
-                <p>The purpose of this application is to provide a visually engaging and intuitive platform for elementary school students to learn about different types of fruits and vegetables in an interactive manner. The key objectives and goals of the software include:</p>
+                <p>The purpose of this application is to provide a visually engaging and intuitive platform for elementary school students to sharpen their minds while discovering different types of fruits. Here are the key objectives of the software:</p>
                     <ul>
-                        <li>Creating a user-friendly interface that is accessible to children in primary grades.</li>
-                        <li>Incorporating visually appealing graphics and animations to enhance the learning experience.</li>
-                        <li>Promoting healthy eating habits and nutrition awareness among young learners.</li>
+                        <li>User-Friendly Interface: Develop a simple and intuitive interface that is easy for young children to navigate and understand.</li>
+                        <li>Visually Appealing Design: Incorporating visually appealing graphics and animations to enhance the user experience.</li>
+                        <li>Motivational Elements: Include features like scores and a leaderboard to motivate children to continue playing and become better.</li>
                     </ul>
             </section>
         </section>
@@ -92,61 +102,131 @@
                 <p>The 'FrOW (Fruits On The Web)' project is conceived as a new product and is not an extension of any existing products within the context of elementary school education.</p>
             </section>
 
-            <!-- Product Functions -->
-            <section id="product-functions">
-                <h3>2.2 Product Functions</h3>
-                <p>For the 'FrOW (Fruits On The Web)' project, the major functions of the front-end include:</p>
-                <ul>
-                    <li>Displaying the main menu where users can select different games or activities.</li>
-                    <li>Providing an interface for users to navigate through various sections of the website.</li>
-                    <li>Implementing a leaderboard to display top players scores.</li>
-                    <li>Allowing users to interact with elements such as buttons, menus, and forms smoothly.</li>
-                    <li>Ensuring responsive design to support different devices and screen sizes.</li>
-                </ul>
-            </section>
-
             <!-- Operating Environment -->
             <section id="operating-environment">
-                <h3>2.3 Operating Environment</h3>
-                <p>The web application 'FrOW (Fruits On The Web)' can be accessed and used on any operating system (Windows, macOS, Linux) and on any modern web browser, including Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari. There are no special hardware requirements for using the application, and it can be accessed from any device with internet access, including desktops, laptops, tablets, and mobile devices.</p>
+                <h3>2.2 Operating Environment</h3>
+                <p>The web application 'FrOW (Fruits On The Web)' can be accessed and used on any operating system (Windows, macOS, Linux) and on any modern web browser, including Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari. There are no special hardware requirements for using the application, and it can be accessed from any device with internet access, including desktops, laptops, tablets, and mobile devices, thanks to its responsive interface.</p>
             </section>
 
             <!-- User Documentation -->
             <section id="user-documentation">
-                <h3>2.4 User Documentation</h3>
-                <p>The user documentation for 'FrOW (Fruits On The Web)' is the scholarly HTML document accompanying the application. It serves as a comprehensive guide for users, providing detailed instructions on navigation, features, and troubleshooting. Additionally, a dedicated help page is available within the application interface to assist users with navigating the site.</p>
+                <h3>2.3 User Documentation</h3>
+                <p>The user documentation for 'FrOW (Fruits On The Web)' is the scholarly HTML document accompanying the application. It serves as a comprehensive guide for users, providing detailed instructions on navigation, features, and troubleshooting.</p>
             </section>
         </section>
 
-        <!-- System features -->
-        <section id="system-features">
-            <h2>System Features</h2>
+        <!-- UI features -->
+        <section id="ui-features">
+            <h2>User Interface Features</h2>
 
-            <!-- Game Page -->
-            <section id="game-page">
-                <h3>3.1 Game Page</h3>
-                <p>The game page will feature a small pop-up allowing users to input their username, which will be later used in the leaderboard table. After entering their username, the actual game will start. Please note that the game itself will be implemented later along with the backend.</p>
+            <!-- Register/Login Page -->
+            <section id="login-page">
+                <h3>3.1 User Registration and Login:</h3>
+                <p>Registration: Users can create accounts with basic credentials (username, email, password) to save their progress and access the game.</p>
+                <img src="img/register.jpg" alt="image">
+                <p>Login: Registered users can log in into their account securely to access their personalized game experience.</p>
+                <img src="img/login.jpg" alt="image">
+            </section>
+
+            <!-- Home Page -->
+            <section id="home-page">
+                <h3>3.2 Home Page</h3>
+                <p>The home page serves as the main landing page for the application, providing users with a brief description of the game, giving players an overview of what to expect. Prominently displayed is the "Play" button, which users can click to start the game and dive into the fun of matching fruit cards.
+                </p>
+                <img src="img/home.jpg" alt="image">
+                <p>In addition to this, the main page includes a navigation bar (navbar) at the top. This navbar allows users to easily navigate between key sections of the website:</p>
+                <ul>
+                    <li>Home: Returns to the main page where the game description and the "Play" button are located.</li>
+                    <li>Leaderboard: Takes users to a page showing the top scores and rankings, fostering a competitive environment.</li>
+                    <li>Contact Us: Directs users to a contact form where they can submit questions, feedback, or issues to the project team.</li>
+                    <li>Logout: Allows users to securely log out of their account, ensuring their game data and progress are protected.</li>
+                </ul>
+                <img src="img/navbar.jpg" alt="image">
             </section>
 
             <!-- Contact Page -->
             <section id="contact-page">
-                <h3>3.2 Contact Page</h3>
+                <h3>3.3 Contact Us Page</h3>
                 <p>The contact page features a simple form where users can provide their name, email address, and a message or description of their issue. This allows them to submit their questions, suggestions, or problems to the project team or application administrators.</p>
+                <img src="img/contact.jpg" alt="image">
             </section>
 
             <!-- Leaderboard Page -->
             <section id="leaderboard-page">
-                <h3>3.3 Leaderboard Page</h3>
-                <p>The Leaderboard page will display rankings of users based on their performance in the game. Users will be able to track their own ranking as well as that of other users, which will help increase engagement.</p>
+                <h3>3.4 Leaderboard Page</h3>
+                <p>The leaderboard page displays the top scores and rankings of players who have achieved the highest scores in the game. This feature adds a competitive element to the game, motivating users to improve their performance and climb the leaderboard ranks.</p>
+                <img src="img/leaderboard.jpg" alt="image">
             </section>
 
-            <!-- About Page -->
-            <section id="about-page">
-                <h3>3.4 About Page</h3>
-                <p>On the "About" page, that you can access by a click on the game logo, you will find essential information about our game and its rules. Here, we will detail the concept behind the game, our objectives, and the rules players need to follow. This page is already here, but the information is not yet displayed as the game logic is not yet implemented.</p>
-
+            <!-- Game Page -->
+            <section id="game-page">
+                <h3>3.5 Game Page</h3>
+                <p>The game page is the core of the application, where users can play the interactive matching game. The game consists of a grid of face-down cards, each containing an image of a fruit. Players must flip over two cards at a time to find matching pairs of fruits. When a player successfully matches two cards, they remain face-up, and the player earns points. The game continues until all pairs are matched, and the player's score is displayed at the end of the round.</p>
+                <img src="img/game.jpg" alt="image">
             </section>
 
+            <!-- Responsive -->
+            <section id="responsive">
+                <h3>3.6 Responsive Design</h3>
+                <p>The application is designed with a responsive layout that adapts to different screen sizes and devices. This ensures that users can access and enjoy the game on desktops, laptops, tablets, and mobile phones without any loss of functionality or user experience.</p>
+                <img src="img/responsive.jpg" alt="image">
+            </section>
+
+        </section>
+
+        <!-- Server Features -->
+        <section id="server-features">
+            <h2>Server Features</h2>
+
+            <!-- Database -->
+            <section id="database">
+                <h3>4.1 Database</h3>
+                <p>The application uses a database to store user account information, game progress, and leaderboard data. The database is designed to be secure, reliable, and scalable to accommodate a growing number of users and game data.</p>
+            </section>
+
+            <!-- User Authentication -->
+            <section id="user-authentication">
+                <h3>4.2 User Authentication</h3>
+                <p>The application implements user authentication to ensure that only registered users can access their accounts and game data. This feature helps protect user privacy and data security.</p>
+            </section>
+
+            <!-- Game Logic -->
+            <section id="game-logic">
+                <h3>4.3 Game Logic</h3>
+                <p>The server-side logic of the application manages the game rules, scoring, and progression. It ensures that the game functions correctly, tracks user progress, and updates the leaderboard with the latest scores.</p>
+            </section>
+
+            <!-- Data Management -->
+            <section id="data-management">
+                <h3>4.4 Data Management</h3>
+                <p>The server handles data management tasks such as storing and retrieving user information, game progress, and leaderboard data. It ensures that data is stored securely and efficiently to provide a seamless user experience.</p>
+            </section>
+
+            <!-- API REST -->
+            <section id="api-rest">
+                <h3>4.5 API REST</h3>
+                <p>The application uses a RESTful API to communicate between the client-side and server-side components. This API allows for seamless data exchange and interaction between the user interface and the backend services.</p>
+                <img src="img/api.jpg" alt="image">
+            </section>
+
+            <!-- RSS feed -->
+            <section id="rss-feed">
+                <h3>4.6 RSS Feed</h3>
+                <p>The application provides an RSS feed feature that allows users to subscribe to updates, news, and announcements related to the game. This feature keeps users informed and engaged with the latest developments and events.</p>
+            </section>
+
+            <!-- Technology used -->
+            <section id="technology-used">
+                <h3>4.7 Technology Used</h3>
+                <p>The application is built using modern web technologies, including HTML, CSS, JavaScript, Node.js, and RESTful APIs. These technologies enable the development of a dynamic, interactive, and secure web application that meets the requirements of the project.</p>
+            </section>
+
+        </section>
+
+        <!-- Application Diagram -->
+        <section id="application-diagram">
+            <h2>Application Diagram</h2>
+            <img src="img/diagram.jpg" alt="image">
         </section>
 
 
@@ -178,10 +258,16 @@
                 <tbody>
                     <tr>
                         <td>2024-04-15</td>
-                        <td>Done</td>
+                        <td>Second Version</td>
                         <td>1.2</td>
                     </tr>
                 </tbody>
+                <tbody>
+                    <tr>
+                        <td>2024-06-24</td>
+                        <td>Final version</td>
+                        <td>1.3</td>
+                    </tr>
             </table>
         </section>
 

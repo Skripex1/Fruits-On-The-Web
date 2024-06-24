@@ -63,5 +63,14 @@
     "latestScore": 0,
     "highestScore": 21,
     "lastScore": 21
+  },
+  {
+    "id": 9,
+    "username": "didibisc",
+    "email": "didi.bisc@gmail.com",
+    "password": "dr23",
+    "latestScore": 0,
+    "highestScore": 17,
+    "lastScore": 7
   }
 ]
